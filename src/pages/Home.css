@@ -5,11 +5,12 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+    background: gray;
    
   }
   
   .card {
-    width: 100px;
+    width: '18rem';
     margin-top: 30px;
     margin-left: 30px;
     height: 70%;
@@ -19,9 +20,19 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 50px;
+    background: orange;
+
+    font-family: Helvetica-Bold;
+    text-align: center;
+    text-decoration: none !important;
+  }
+
+  .classWrap:hover {
+    text-decoration: none !important;
   }
   .card:hover {
     transform: scale(1.1);
+    background: #FF8C00;
   }
   
   @media (max-width: 768px) {
