@@ -2,17 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './tab.css'; // Import CSS for styling
 
 const Tab = ({ tabs }) => {
-  const [activeTab, setActiveTab] = useState(tabs.id);
+    const [activeTab, setActiveTab] = useState(null);
+
+    // Use useEffect to set the initial activeTab when tabs are loaded
+    useEffect(() => {
+      if (tabs && tabs.length > 0) {
+        setActiveTab(tabs[0].id);  // Set to the first tab's id
+      }
+    }, []);
 
   
-
+ 
   const handleTabClick = (tabId) => {
       setActiveTab(tabId);
   };
 
-  if (!tabs || tabs.length === 0) {
-      return <div>Loading tabs...</div>;
-  }
+  
 
   return (
       <div className="tab-container">
