@@ -17,7 +17,10 @@ function POTD() {
       if (snapshot.empty) {
         console.log('No matching documents.');
         return;
-      } 
+    } 
+      const newPhytabs = [];
+      const newMathstabs = [];
+      const newChemtabs = [];
      
 
         snapshot.docs.forEach(doc => {
@@ -27,45 +30,45 @@ function POTD() {
             ].filter(Boolean);  // Filter to remove any falsy values
 
             const newTab1 = {
+                  id: doc.id,
+                  title:"Mathematics",  // Assuming 'ques' holds the question title
+                  content: {
+                      question: data.ques,
+                      options: options
+                  }
+              };
+            const newTab3 = {
                 id: doc.id,
-                title:"maths",  // Assuming 'ques' holds the question title
+                title:"Chemistry",  // Assuming 'ques' holds the question title
                 content: {
                     question: data.ques,
                     options: options
                 }
             };
-            const newTab3 = {
+            const newTab2 = {
               id: doc.id,
-              title:"chem",  // Assuming 'ques' holds the question title
+              title:"Physics",  // Assuming 'ques' holds the question title
               content: {
                   question: data.ques,
                   options: options
               }
-          };
-          const newTab2 = {
-            id: doc.id,
-            title:"physics",  // Assuming 'ques' holds the question title
-            content: {
-                question: data.ques,
-                options: options
-            }
-        };
+            };
 
             // Example conditions to differentiate tabs, assuming you have some field or logic to distinguish them
             
-            mathstabs.push(newTab1);
-            phytabs.push(newTab2);
-           
+            newMathstabs.push(newTab1);
+            newPhytabs.push(newTab2);
+            newChemtabs.push(newTab3);
                 
            
-                chemtabs.push(newTab3);
+              
             
         });
 
-        setPhytabs(phytabs);  // Assuming you have a state set up for physics tabs
-        setMathstabs(mathstabs);  // Assuming you have a state set up for maths tabs
-        setChemtabs(chemtabs);  // Assuming you have a state set up for chemistry tabs
-    }, []);
+        setPhytabs(newPhytabs);  // Assuming you have a state set up for physics tabs
+        setMathstabs(newMathstabs);  // Assuming you have a state set up for maths tabs
+        setChemtabs(newChemtabs);  // Assuming you have a state set up for chemistry tabs
+    });
 
     return () => unsubscribe();
 }, []);
