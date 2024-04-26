@@ -1,34 +1,51 @@
 .tab-container {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .tab-header {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .tab-item {
-    padding: 10px 20px;
-    cursor: pointer;
-    border-bottom: 1px solid transparent;
-  }
-  
-  .tab-item.active {
-    border-bottom: 5px solid #ccc;
-    color: black;
-    font-weight: 700;
-  }
-  
-  .tab-content {
-    padding: 20px;
-  }
-  
-  .tab-pane {
-    display: none;
-  }
-  
-  .tab-pane.active {
-    display: block;
-  }
-  
+  font-family: Arial, sans-serif;
+}
+
+.tab-header {
+  display: flex;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab-item {
+  margin-right: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #eee;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab-item.active,
+.tab-item:hover {
+  background-color: #ddd;
+  border-color: #ccc;
+}
+
+.tab-content {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.options-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.option-item {
+  padding: 10px;
+  background-color: #eee;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.option-item:hover {
+  background-color: #ddd;
+}
