@@ -1,6 +1,6 @@
 import {React,useEffect, useState} from 'react'
 import Tab from '../components/Tab';
-import db from '../firebase.js';
+import {db} from '../firebase';
 import { onSnapshot, collection} from 'firebase/firestore';
 
 
@@ -17,7 +17,7 @@ function POTD() {
       if (snapshot.empty) {
         console.log('No matching documents.');
         return;
-    } 
+      } 
      
 
         snapshot.docs.forEach(doc => {
@@ -65,7 +65,7 @@ function POTD() {
         setPhytabs(phytabs);  // Assuming you have a state set up for physics tabs
         setMathstabs(mathstabs);  // Assuming you have a state set up for maths tabs
         setChemtabs(chemtabs);  // Assuming you have a state set up for chemistry tabs
-    });
+    }, []);
 
     return () => unsubscribe();
 }, []);

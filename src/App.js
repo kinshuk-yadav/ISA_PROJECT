@@ -8,11 +8,13 @@ import Profile from "./pages/Profile";
 import Resources from "./pages/Resources";
 import POTD from "./pages/POTD";
 import Login from "./pages/Login";
+import { UserAuthContextProvider } from "./context/userAuthContext";
 
 var val = 1;
 
 function App() {
   return (
+    <UserAuthContextProvider>
     <div className="container-fluidd">
       
       
@@ -42,12 +44,12 @@ function App() {
         {/* <Route path="/" element={<Login />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        
-         <Route path="/resources" element={<Resources />} />
+        <Route path="/resources" element={<Resources />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/potd" element={<POTD />} /> 
       </Routes>
     </div>
+    </UserAuthContextProvider>
   );
 }
 
