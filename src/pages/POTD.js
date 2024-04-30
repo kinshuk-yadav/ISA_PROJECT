@@ -1,6 +1,6 @@
 import {React,useEffect, useState} from 'react'
 import Tab from '../components/Tab';
-import db from '../firebase.js';
+import {db} from '../firebase';
 import { onSnapshot, collection} from 'firebase/firestore';
 
 

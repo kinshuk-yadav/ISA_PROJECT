@@ -19,10 +19,14 @@ export default function Home() {
         </div>
 
         <div className="card" >
-          <Link to="/profile" className='CardWrap'>                     
+          {/* <Link to="/profile" className='CardWrap'>                     
                 <h5 className="card-title">FEELING BORED? <br /> TAKE A BREAK</h5>
                 <GiBrain style={{ fontSize: '150px' }}/><br />  
-          </Link>
+          </Link> */}
+          <a href = "https://boring-breaks.netlify.app/" target = "_blank" className='CardWrap'>                     
+                <h5 className="card-title">FEELING BORED? <br /> TAKE A BREAK</h5>
+                <GiBrain style={{ fontSize: '150px' }}/><br />  
+          </a>
         </div>
 
 
