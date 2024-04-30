@@ -3,7 +3,8 @@
   flex-wrap: wrap;
   justify-content: center; /* Center aligns items on the line */
   align-items: center;
-  background: #f0f0f0;
+  /* background: #f0f0f0; */
+  background: url('../assets/bg-jeehack.png');
 }
 
 .card {
@@ -16,7 +17,8 @@
   flex-direction: column;
   justify-content: space-around;
   padding: 20px;
-  background: #ffa500; /* Card background color */
+  background-color : burlywood  ; /* Card background color */
+  color : white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
   text-decoration: none;
@@ -55,3 +57,10 @@
 .coming-soon:hover .card-hover-overlay {
   opacity: 1; /* Show overlay on hover */
 }
+
+.home{
+  background: url('../assets/bg-jeehack.png');
+  background-size: cover;
+  background-position: center;
+}
+
