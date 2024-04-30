@@ -8,12 +8,12 @@ export default function Navbar() {
           <Link to="/" class="list">
             Home
           </Link>
-           <Link to="/resources" class="list">
+           {/* <Link to="/resources" class="list">
             Resources
           </Link>
           <Link to="/profile" class="list">
             Profile
-          </Link>
+          </Link> */}
           <Link to="/potd" class="list">
             Problem of the Day
           </Link> 
