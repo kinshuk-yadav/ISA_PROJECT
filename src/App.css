@@ -12,6 +12,10 @@
   
 }
 
+.container-fluidd{
+  height: 100%;
+}
+
 .list {
   color: #61dafb;
   margin: 10px;

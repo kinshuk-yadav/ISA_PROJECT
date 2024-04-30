@@ -24,7 +24,7 @@ const Login = () => {
 		const response = await signIn({email, password});
 		if(response) {
 			console.log("logged In sucessfully!!");
-            navigate("/");
+            navigate("/home");
     
 		} else {
 			console.log("Error in login!!");

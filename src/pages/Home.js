@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import './Home.css';
 import Navbar from '../components/Navbar';
 import { GiBrain } from "react-icons/gi";
+import { MdFreeBreakfast } from "react-icons/md";
 
 export default function Home() {
   return (
@@ -19,22 +20,23 @@ export default function Home() {
         <div className="card">
           <a href="https://boring-breaks.netlify.app/" target="_blank" className='CardWrap'>                     
             <h5 className="card-title">FEELING BORED? <br /> TAKE A BREAK</h5>
-            <GiBrain style={{ fontSize: '150px' }}/><br />  
+            {/* <GiBrain style={{ fontSize: '150px' }}/><br />   */}
+            <MdFreeBreakfast style={{ fontSize: '150px' }}/><br />
           </a>
         </div>
 
         <div className="card coming-soon">
           <div className="card-hover-overlay">Coming Soon</div>
           <h5 className="card-title">Resources</h5>
-          <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <Link to="/resources" className="btn btn-primary">Go somewhere</Link>
+          <p className="card-text">Resourses to guide, at every step of the way.<br /> Practice questions in Real, JEE like environment</p>
+          {/* <Link to="/resources" className="btn btn-primary">Go somewhere</Link> */}
         </div>
 
         <div className="card coming-soon">
           <div className="card-hover-overlay">Coming Soon</div>
           <h5 className="card-title">Profile</h5>
-          <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <Link to="/profile" className="btn btn-primary">Go somewhere</Link>
+          <p className="card-text">Find the details of where you stand in terms of syllabus covered</p>
+          {/* <Link to="/profile" className="btn btn-primary">Go somewhere</Link> */}
         </div>
       </div>
     </div>

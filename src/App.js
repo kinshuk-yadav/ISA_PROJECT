@@ -42,8 +42,8 @@ function App() {
       {/* Defining routes path and rendering components as element */}
       <Routes>
         {/* <Route path="/" element={<Login />} /> */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Login />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/potd" element={<POTD />} /> 
