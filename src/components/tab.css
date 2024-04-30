@@ -4,7 +4,7 @@
 
 .tab-header {
   display: flex;
-  background-color: #f4f4f4;
+  background-color: white;
   padding: 10px;
   border-bottom: 2px solid #ddd;
 }
@@ -21,7 +21,7 @@
 
 .tab-item.active,
 .tab-item:hover {
-  background-color: #ddd;
+  background-color: plum;
   border-color: #ccc;
 }
 
@@ -47,5 +47,5 @@
 }
 
 .option-item:hover {
-  background-color: #ddd;
+  background-color:plum;
 }
