@@ -35,7 +35,9 @@ export default function Home() {
         <div className="card coming-soon">
           <div className="card-hover-overlay">Coming Soon</div>
           <h5 className="card-title">Profile</h5>
-          <p className="card-text">Find the details of where you stand in terms of syllabus covered</p>
+          <p className="card-text">Find the details of where you stand in terms of syllabus covered
+          <br />
+          </p>
           {/* <Link to="/profile" className="btn btn-primary">Go somewhere</Link> */}
         </div>
       </div>

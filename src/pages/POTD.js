@@ -74,7 +74,7 @@ function POTD() {
     const handleSubmit = () => {
         console.log("Selected Options:", selectedOptions);
         // Additional submission logic here
-        navigate('/');
+        navigate('/home');
     };
    
 
