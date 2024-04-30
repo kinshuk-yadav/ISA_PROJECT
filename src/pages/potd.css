@@ -1,0 +1,101 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif; /* Default font */
+    background-color: #f4f4f9; /* Light grey background */
+    margin: 0;
+    padding: 20px;
+    color: #333; /* Dark grey text for readability */
+}
+
+/* Header styles */
+h1 {
+    color: #2a2a72; /* Dark blue for emphasis */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Navbar styling, assuming basic styling */
+.navbar {
+    background-color: #4CAF50; /* Green background to match button */
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Tab container styles */
+.tab-container {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.tab-header {
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    color: #333;
+}
+
+.tab-item {
+    font-weight: bold;
+    color: #2a2a72;
+}
+
+.tab-content {
+    padding: 20px;
+}
+
+.tab-pane {
+    margin-top: 10px;
+}
+
+/* Input and Label styling */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+/* Button styling */
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn button {
+    width: 150px;
+    height: 50px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .tab-header, .tab-content {
+        padding: 10px;
+    }
+
+    .btn button {
+        width: 100%; /* Full width on smaller screens */
+    }
+}

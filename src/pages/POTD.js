@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import Tab from '../components/Tab';
 import { db } from '../firebase';
 import { onSnapshot, collection } from 'firebase/firestore';
 import Navbar from '../components/Navbar';
+import './potd.css';
 
 function POTD() {
     const [mathstabs, setMathstabs] = useState([]);
@@ -22,38 +24,36 @@ function POTD() {
 
             snapshot.docs.forEach(doc => {
                 const data = doc.data();
+                if (!data.subject) {
+                    console.warn('Document has no subject:', doc.id);
+                    return; // Skip this document if it doesn't have a subject field
+                }
                 const options = [
                     data.option1, data.option2, data.option3, data.option4
-                ].filter(Boolean);  // Filter to remove any falsy values
+                ].filter(Boolean); // Filter to remove any falsy values
 
-                const newTab1 = {
+                const newTab = {
                     id: doc.id,
-                    title: "Mathematics",
-                    content: {
-                        question: data.ques,
-                        options: options
-                    }
-                };
-                const newTab3 = {
-                    id: doc.id,
-                    title: "Chemistry",
-                    content: {
-                        question: data.ques,
-                        options: options
-                    }
-                };
-                const newTab2 = {
-                    id: doc.id,
-                    title: "Physics",
+                    title: data.subject,
                     content: {
                         question: data.ques,
                         options: options
                     }
                 };
 
-                newMathstabs.push(newTab1);
-                newPhytabs.push(newTab2);
-                newChemtabs.push(newTab3);
+                switch(data.subject) {
+                    case 'Mathematics':
+                        newMathstabs.push(newTab);
+                        break;
+                    case 'Physics':
+                        newPhytabs.push(newTab);
+                        break;
+                    case 'Chemistry':
+                        newChemtabs.push(newTab);
+                        break;
+                    default:
+                        console.warn('Unknown subject:', data.subject);
+                }
             });
 
             setPhytabs(newPhytabs);
@@ -70,12 +70,13 @@ function POTD() {
             [tabId]: option
         });
     };
-
+    const navigate=useNavigate();
     const handleSubmit = () => {
-        // Handle submission of selected options
         console.log("Selected Options:", selectedOptions);
-        // You can perform further actions here, such as submitting the answers to a server
+        // Additional submission logic here
+        navigate('/');
     };
+   
 
     return (
         <div>
@@ -84,15 +85,22 @@ function POTD() {
             <Tab tabs={mathstabs} onOptionSelect={handleOptionSelect} />
             <Tab tabs={phytabs} onOptionSelect={handleOptionSelect} />
             <Tab tabs={chemtabs} onOptionSelect={handleOptionSelect} />
-            <div className="submit-button-container">
-                <button
-                    className="submit-button"
-                    onClick={handleSubmit}
-                    disabled={Object.keys(selectedOptions).length !== (mathstabs.length + phytabs.length + chemtabs.length)}
-                >
-                    Submit
-                </button>
+            <div className='btn'>
+            <button onClick={handleSubmit}
+               style={{
+                width: '150px', // Set the width of the button
+                height: '50px', // Set the height of the button
+                backgroundColor: '#4CAF50', // Green background
+                color: 'white', // White text
+                fontSize: '16px', // Larger font size
+                border: 'none', // No border
+                borderRadius: '5px', // Rounded corners
+                cursor: 'pointer' // Pointer cursor on hover
+            }}
+            > Submit</button>
             </div>
+           
+           
         </div>
     );
 }

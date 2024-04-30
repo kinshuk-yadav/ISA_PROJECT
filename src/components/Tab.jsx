@@ -18,12 +18,6 @@ const Tab = ({ tabs }) => {
         });
     };
 
-    const handleSubmit = () => {
-        // Handle form submission
-        console.log("Selected Options: a b c", selectedOptions);
-        // You can perform further actions here, such as submitting the answers to a server
-    };
-
     return (
         <div>
             {tabs.map((tab) => (
@@ -53,15 +47,6 @@ const Tab = ({ tabs }) => {
                     </div>
                 </div>
             ))}
-            <div className="submit-button-container">
-                <button
-                    className="submit-button"
-                    onClick={handleSubmit}
-                    disabled={!allQuestionsAnswered}
-                >
-                    Submit
-                </button>
-            </div>
         </div>
     );
 };
