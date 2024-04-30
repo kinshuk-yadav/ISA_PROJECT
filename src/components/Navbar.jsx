@@ -30,8 +30,8 @@ export default function Navbar() {
             <div class="navbar-nav">
                 <Link to="/home" class="nav-item nav-link active text-light" >Home </Link>
                 <Link to="/potd" class="nav-item nav-link active text-light" >Problem Of The Day </Link>
-                <Link to="/potd" class="nav-item nav-link disabled text-dark " >Resources </Link>
-                <Link to="/potd" class="nav-item nav-link disabled text-dark" >Profile </Link>
+                <Link to="/potd" class="nav-item nav-link disabled text-light " >Resources </Link>
+                <Link to="/potd" class="nav-item nav-link disabled text-light" >Profile </Link>
             </div>
         </div>
     </div>
