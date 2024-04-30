@@ -3,8 +3,11 @@ import './Login.css';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { useUserAuth } from '../context/userAuthContext';
+import { Navigate, useNavigate } from "react-router-dom";
+
 
 const Login = () => {
+    const navigate = useNavigate();
 
   const [isLogin, setIsLogin] = useState(true);
 	const [userName, setUserName] = useState("");
@@ -17,6 +20,8 @@ const Login = () => {
 		const response = await signIn({email, password});
 		if(response) {
 			console.log("logged In sucessfully!!");
+            navigate("/");
+    
 		} else {
 			console.log("Error in login!!");
 		}
